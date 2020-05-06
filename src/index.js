@@ -63,7 +63,7 @@ let addPanel = aside.querySelector("button");
 controlPanelSetup(".controlPanel.p0", optionArray[0]);
 let box = $("#box").init(optionArray);
 watchableArray[0].on("updated", e => {
-  if (e.detail.property == "children") {
+  if (e.detail.setTriggered.property == "children") {
     box = $("#box").init(optionArray);
   }
   box.flex(optionArray);
@@ -103,7 +103,7 @@ addPanel.addEventListener("click", () => {
   );
   let box = $("#box").init(optionArray);
   watchableArray[optLastIndex].on("updated", () => {
-    if (e.detail.property == "children") {
+    if (e.detail.setTriggered.property == "children") {
       box = $("#box").init(optionArray);
     }
     box.flex(optionArray);
